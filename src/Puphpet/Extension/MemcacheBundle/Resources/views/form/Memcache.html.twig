@@ -1,0 +1,42 @@
+<section id="memcache">
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Memcache</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="row form-group">
+                        <div class="col-xs-12">
+                            <label class="checkbox-inline">
+                                <input type="checkbox" name="memcache[install]" class="multiselect-grouped-tab"
+                                       data-tab-target="memcache-pill"
+                                       {% if memcache.install %}checked{% endif %} value="1" /> Install Memcache
+                            </label>
+
+                            <p class="help-block">
+                                Memcache will be installed from github repo github.com/saz/puppet-memcached.
+                            </p>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <label for="memcache-memory">Memory</label>
+                            <input type="text" id="memcache-memory" name="memcache[memory]"
+                                   value="{{ memcache.memory }}" class="form-control" />
+
+                            <p class="help-block">
+                                You can set how many memory should be used by memcache.
+                                Type "512" to set 512Mb or "15%" to set memory in percents.
+                                Also you can leave this field blank.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>

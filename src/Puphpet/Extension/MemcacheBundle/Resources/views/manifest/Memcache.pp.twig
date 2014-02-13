@@ -1,0 +1,15 @@
+## Begin Memcache manifest
+
+if $memcache_values == undef {
+  $memcache_values = hiera('memcache', false)
+}
+
+if $memcache_values['install'] != undef and $memcache_values['install'] == 1 {
+  if ($memcache_values['memory'] != undef) {
+    class { 'memcached': max_memory => $memcache_values['memory']}
+  } else {
+    class { 'memcached': }
+  }
+}
+
+## End Memcache manifest

@@ -21,6 +21,7 @@ services:
             - [ addExtensionToGroup, [ 'webserver', @puphpet.extension.apache.configure ] ]
             - [ addExtensionToGroup, [ 'webserver', @puphpet.extension.nginx.configure ] ]
             - [ addExtensionToGroup, [ 'webserver', @puphpet.extension.varnish.configure ] ]
+            - [ addExtensionToGroup, [ 'webserver', @puphpet.extension.memcache.configure ] ]
         # php
             - [ addExtension, [ @puphpet.extension.php.configure ] ]
             - [ addExtensionToGroup, [ 'php-extensions', @puphpet.extension.xdebug.configure ] ]

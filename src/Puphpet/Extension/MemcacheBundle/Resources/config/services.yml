@@ -1,0 +1,17 @@
+parameters:
+
+services:
+    puphpet.extension.memcache.configure:
+        class: Puphpet\Extension\MemcacheBundle\Configure
+        arguments:
+            - "@service_container"
+
+    puphpet.extension.memcache.front_controller:
+        class: Puphpet\Extension\MemcacheBundle\Controller\FrontController
+        calls:
+            - [ setContainer, [@service_container] ]
+
+    puphpet.extension.memcache.manifest_controller:
+        class: Puphpet\Extension\MemcacheBundle\Controller\ManifestController
+        calls:
+            - [ setContainer, [@service_container] ]
